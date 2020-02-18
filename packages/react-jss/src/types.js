@@ -19,9 +19,7 @@ export type HookOptions<Theme> = StyleSheetFactoryOptions & {
   theming?: Theming<Theme>
 }
 
-export type HOCOptions<Theme> = StyleSheetFactoryOptions & {
-  index?: number,
-  theming?: Theming<Theme>,
+export type HOCOptions<Theme> = HookOptions<Theme> & {
   injectTheme?: boolean
 }
 
@@ -37,9 +35,7 @@ export type Context = {|
 |}
 
 export type HOCProps<Theme, Props> = Props & {
-  theme: Theme,
-  jssContext: Context,
-  innerRef: any
+  theme?: Theme
 }
 
 export type Classes = {[string]: string}
